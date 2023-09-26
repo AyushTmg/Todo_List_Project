@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     "debug_toolbar",
     'tasks',
 ]
 
@@ -38,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'todo.urls'
@@ -61,8 +63,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'todo.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+Database
+https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -73,6 +75,7 @@ DATABASES = {
 
     }
 }
+
 
 
 
@@ -119,3 +122,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL='tasks.User'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]

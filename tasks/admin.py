@@ -28,5 +28,7 @@ class TaskAdmin(admin.ModelAdmin):
         search_fields=['title']
         autocomplete_fields=['user']
 
+        
+
 
 
