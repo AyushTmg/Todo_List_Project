@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:green; color: whitesmoke;">
+<h3>The Home Page</h3>
+{% comment %} ! learn how it works  {% endcomment %}
+{% comment %} <form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}} {{form.user}}
+    <input type="submit" ,value="create_task">
+</form> {% endcomment %}
+
+<a href="{% url 'add_task' %}">Add Task</a>
+
+{%for task in tasks%}
+<div>
+    <a href="{% url 'update_task' task.id %}">Update</a>
+    <a href="{% url 'delete_task' task.id %}">Delete</a>
+    {%if task.complete == True %}
+        <strike>{{task}}</strike>
+    {%else%}
+        <span>{{task}}</span>
+    {%endif%}
+</div>
+{%endfor%}
+
+    
+</body>
+</html>
