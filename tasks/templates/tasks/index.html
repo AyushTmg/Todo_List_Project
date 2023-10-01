@@ -101,18 +101,20 @@
         .task-item.completed {
             text-decoration: line-through;
         }
+        .pointer{
+            cursor : pointer ;        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h3>The Task List</h3>
+        <h3 class="pointer">The Task List</h3>
         <a class="btn btn-add-task" href="{% url 'add_task' %}">Add Task</a>
         {%if tasks%}
 
             {% for task in tasks %}
             <div class="task-item{% if task.complete %} completed{% endif %}">
-                <span>{{ task }}</span>
-                <span>{{ task.date }}</span>
+                <span class="pointer">{{ task }}</span>
+                <span class="pointer">{{ task.date }}</span>
 
 
                 <div class="task-actions">

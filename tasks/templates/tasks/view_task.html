@@ -44,6 +44,14 @@
             font-weight: bold;
             color: #007BFF;
         }
+        .back{
+            padding:40px,20px;
+            font-size: 20px;
+            border-radius: 80px;
+            background-color:blue;
+            color:white;
+        }
+
     </style>
 </head>
 <body>
@@ -56,7 +64,13 @@
             <li><strong>Complete:</strong> {{ tasks.complete }}</li>
             <li><strong>Status:</strong> {{ tasks.status }}</li>
         </ul>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <button type="submit" class="back">Back</button>
+        </form>
     </div>
+
+
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

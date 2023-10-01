@@ -23,6 +23,8 @@ def addTask(request):
 
 def viewTask(request,pk):
     task=Tasks.objects.get(id=pk)
+    if request.method=='POST':
+        return redirect("/")
     context={'tasks':task} 
     return render(request,'tasks/view_task.html',context)
     
